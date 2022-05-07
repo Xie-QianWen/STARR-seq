@@ -6,7 +6,8 @@ QC pipeline for MPRA and STARR-seq experiments
 > https://github.com/ENCODE-AWG/mpra_starr_qc
 
 - Create fragment count files from STARR-seq BAM files.
-  ```R
+  
+```R
  #!/usr/bin/env Rscript
 
 suppressPackageStartupMessages({
@@ -117,8 +118,10 @@ seqlib_df = seqlib_df[, col_order]
 # write the dataframe into output format required
 
 write.table(seqlib_df, file=paste0(args$outfile), quote=FALSE, row.names=FALSE, sep='\t');
-  ```
+```
+
 - Aggregate fragments in fixed size bins.
+
 ```R
 suppressPackageStartupMessages({
     library(Rsamtools)
@@ -258,7 +261,9 @@ if(args$bin){
     }
 }
 ```
+
 - Main script to generate QC plots and summary statistics.
+
 ```R
 #!/usr/bin/env Rscript
 suppressPackageStartupMessages({
